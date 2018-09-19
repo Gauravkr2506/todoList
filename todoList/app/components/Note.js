@@ -6,6 +6,7 @@ import {Platform,
        TouchableOpacity,
 
 } from 'react-native';
+import { Icon, Badge } from "native-base";
 
 export default class Note extends React.Component{
   render() {
@@ -14,7 +15,9 @@ export default class Note extends React.Component{
       <Text style={styles.noteText}>{this.props.val.date}</Text>
       <Text style={styles.noteText}>{this.props.val.note}</Text>
      <TouchableOpacity onPress={this.props.deleteMethod} style={styles.noteDelete}>
-     <Text style={styles.noteDeleteText}>X</Text>
+     <Text style={styles.noteDeleteText}>
+     <Icon name="delete-forever" type='MaterialCommunityIcons' style={{ fontSize: 25, color: "#fff" }}/>
+     </Text>
      </TouchableOpacity>
       </View>
     );
@@ -33,18 +36,21 @@ const styles = StyleSheet.create({
   noteText:{
     paddingLeft:20,
     borderLeftWidth:10,
-    borderLeftColor:'#e91e63',
+    borderLeftColor:'#0033b2',
 
   },
   noteDelete:{
     position:'absolute',
     justifyContent:'center',
     alignItems:'center',
-    backgroundColor:'#298eb9',
-    padding:10,
-    top:10,
-    bottom:10,
+    backgroundColor:'#3d0052',
+    padding:4,
+    
+    top:20,
     right:10,
+    borderRadius:22,
+    width:40,
+    height:40
   },
   noteDeleteText:{
     color:'white',
